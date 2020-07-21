@@ -1,0 +1,20 @@
+{
+  "stryker-config": {
+    "test-runner": "vstest",
+    "reporters": ["progress", "dashboard"],
+    "log-level": "error",
+    "log-file": false,
+    "timeout-ms": 10000,
+    "project-file": "Stryker.Net.Sample.csproj",
+    "max-concurrent-test-runners": 4,
+    "threshold-high": 80,
+    "threshold-low": 70,
+    "threshold-break": 60,
+    "mutate": [],
+    "excluded-mutations": [],
+    "ignore-methods": [],
+    "dashboard-api-key": "c83b1aaa-2109-4c58-957a-9e4ebec3734e",
+    "dashboard-project": "github.com/raschmitt/stryker-net-sample",
+    "dashboard-version": "master"
+  }
+}

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Account
+namespace Stryker.Net.Sample
 {
     public class Account
     {
