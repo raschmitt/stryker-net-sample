@@ -29,7 +29,7 @@ This will run the mutations based on the configurations of the `stryker-config.j
 
 ![Console reporter](https://i.imgur.com/CpCurCL.png "Console reporter")
 
-The mutation score and the location where to find the complete html report will be displayed in the console.
+The mutation score and the location where to find the complete html report will be displayed into the console.
 
 ![Html reporter](https://i.imgur.com/Aid3MFi.png "Html reporter")
 
