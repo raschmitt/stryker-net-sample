@@ -21,11 +21,9 @@ jobs:
       with:
         dotnet-version: 3.1.101
       
-    - name: Install dependencies
-      run: dotnet restore
-      
     - name: Build
       run: dotnet build
             
     - name: Run mutations
       run: dotnet stryker --dashboard-api-key ${{ secrets.STRYKER_DASHBOARD_API_KEY }}
+      working-directory: Stryker.Net.Sample.Tests  
