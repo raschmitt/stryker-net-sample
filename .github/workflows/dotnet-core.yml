@@ -16,7 +16,7 @@ jobs:
     runs-on: windows-latest 
     defaults:
       run:
-        working-directory: 'Stryker.Net.Sample'  
+        working-directory: Stryker.Net.Sample  
 
     steps:
     - uses: actions/checkout@v2
@@ -28,7 +28,6 @@ jobs:
       
     - name: Install dependencies
       run: dotnet restore
-      working-directory: DateOverride
       
     - name: Build
       run: dotnet build --configuration Release --no-restore
