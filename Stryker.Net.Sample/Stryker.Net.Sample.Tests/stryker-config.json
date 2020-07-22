@@ -11,8 +11,6 @@
     "threshold-break": 60,
     "mutate": [],
     "excluded-mutations": [],
-    "ignore-methods": [],
-    "dashboard-project": "github.com/raschmitt/stryker-net-sample",
-    "dashboard-version": "master"
+    "ignore-methods": []
   }
 }
