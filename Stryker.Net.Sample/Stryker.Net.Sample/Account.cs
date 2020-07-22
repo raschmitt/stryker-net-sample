@@ -33,9 +33,9 @@ namespace Stryker.Net.Sample
         private bool CanWithdraw(double amount)
         {
             if (Overdraft)
-                return (Balance + _overdraftLimit) > amount;
+                return (Balance + _overdraftLimit) >= amount;
             
-            return Balance > amount;
+            return Balance >= amount;
         }
     }
 }
