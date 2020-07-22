@@ -6,7 +6,7 @@
 
 This is a sample project that demonstrates how [Stryker .Net](https://github.com/stryker-mutator/stryker-net) can be used to run mutation tests in .Net Core, if you are looking for more information on Stryker itself or what mutation tests can do for you please refer to their [offcial website](https://stryker-mutator.io/).
 
-## Dependencies 
+## Project Dependencies 
 
 - [.Net Core 3.1](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-1/)
 - [FluentAssertions](https://fluentassertions.com/)
