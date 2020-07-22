@@ -1,0 +1,31 @@
+name: Mutation Tests
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  '0 0 * * FRI'
+
+jobs:
+  build:
+
+    runs-on: windows-latest 
+    defaults:
+      run:
+        working-directory: Stryker.Net.Sample  
+
+    steps:
+    - uses: actions/checkout@v2
+      
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.101
+      
+    - name: Install dependencies
+      run: dotnet restore
+      
+    - name: Build
+      run: dotnet build
+            
+    - name: Run mutations
+      run: dotnet stryker --dashboard-api-key ${{ secrets.STRYKER_DASHBOARD_API_KEY }}
