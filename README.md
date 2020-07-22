@@ -13,7 +13,25 @@ This is a sample project that demonstrates how [Stryker .Net](https://github.com
 
 ## Local Run
 
-To be continued ...
+First of all let's install Struker globally.
+
+`dotnet tool install -g dotnet-stryker`
+
+After installing and properly cloning this respository, simply go to the tests folder location. 
+
+`cd <repository location>\Stryker.Net.Sample\Stryker.Net.Sample.Tests`
+
+And finally run the mutation tests
+
+`dotnet stryker`
+
+This will run the mutations based on the configurations of the `stryker-config.json` file, present in this directory. 
+
+![Console reporter](https://i.imgur.com/CpCurCL.png "Console reporter")
+
+The mutation score and the location where to find the complete html report will be displayed in the console.
+
+![Html reporter](https://i.imgur.com/Aid3MFi.png "Html reporter")
 
 ## Continuous Integartion
 
