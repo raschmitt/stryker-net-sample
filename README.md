@@ -25,13 +25,10 @@ And finally run the mutation tests.
 
 `dotnet stryker`
 
-This will run the mutations based on the configurations of the `stryker-config.json` file, present in this directory. 
+This will run the mutations based on the configurations of the `stryker-config.json` file, present in this directory. The mutation score and the location where to find the complete html report will be displayed into the console.
 
 ![Console reporter](https://i.imgur.com/CpCurCL.png "Console reporter")
 
-The mutation score and the location where to find the complete html report will be displayed into the console.
-
-![Html reporter](https://i.imgur.com/Aid3MFi.png "Html reporter")
 
 ## Continuous Integartion
 
