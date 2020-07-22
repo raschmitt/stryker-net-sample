@@ -21,7 +21,7 @@ After installing and properly cloning this respository, simply go to the tests f
 
 `cd <repository location>\Stryker.Net.Sample\Stryker.Net.Sample.Tests`
 
-And finally run the mutation tests
+And finally run the mutation tests.
 
 `dotnet stryker`
 
