@@ -21,4 +21,4 @@ To be continued ...
 
 The sample workflow file shows how to easily integrate mutation tests trough Stryker into a continous integration estrategy and publish results to its dashboard.
 
-Results for its latest run can be found [here](https://dashboard.stryker-mutator.io/reports/github.com/raschmitt/stryker-net-sample/master).
+This workflow is automattically run every friday, and the results for its latest run can be found [here](https://dashboard.stryker-mutator.io/reports/github.com/raschmitt/stryker-net-sample/master).
