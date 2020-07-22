@@ -17,4 +17,8 @@ To be continued ...
 
 ## Continuous Integartion
 
-A sample workflow running mutation tests and deploying results to Stryker Dashboard trough Github Actions can be found [here](https://github.com/raschmitt/stryker-net-sample/blob/master/.github/workflows/mutation-tests.yml), whereas the result for the latest run are available [here](https://dashboard.stryker-mutator.io/reports/github.com/raschmitt/stryker-net-sample/master).
+- [Sample workflow](https://github.com/raschmitt/stryker-net-sample/blob/master/.github/workflows/mutation-tests.yml)
+
+The sample workflow file shows how to easily integrate mutation tests trough Stryker into a continous integration estrategy and publish results to its dashboard.
+
+Results for its latest run can be found [here](https://dashboard.stryker-mutator.io/reports/github.com/raschmitt/stryker-net-sample/master).
