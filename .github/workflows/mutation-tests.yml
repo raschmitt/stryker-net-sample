@@ -28,7 +28,7 @@ jobs:
       run: dotnet tool install -g dotnet-stryker
             
     - name: Run mutations
-      run: dotnet stryker --dashboard-api-key ${{ secrets.STRYKER_DASHBOARD_API_KEY }} --dashboard-project github.com/raschmitt/stryker-net-sample --dashboar-version master
+      run: dotnet stryker --dashboard-api-key ${{ secrets.STRYKER_DASHBOARD_API_KEY }} --dashboard-project github.com/raschmitt/stryker-net-sample --dashboard-version master
       working-directory: Stryker.Net.Sample/Stryker.Net.Sample.Tests  
       
 
