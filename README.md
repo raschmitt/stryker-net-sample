@@ -4,7 +4,7 @@
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/raschmitt/stryker-net-sample/Mutation%20Tests?label=Mutation%20tests&style=flat-square)](https://dashboard.stryker-mutator.io/reports/github.com/raschmitt/stryker-net-sample/master)
 [![Mutation testing badge](https://img.shields.io/endpoint?style=flat-square&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fraschmitt%2Fstryker-net-sample%2Fmaster)](https://dashboard.stryker-mutator.io/reports/github.com/raschmitt/stryker-net-sample/master)
 
-This is a sample project that demonstrates how [Stryker .Net](https://github.com/stryker-mutator/stryker-net) can be used to run mutation tests in .Net Core, if you are looking for more information on Stryker itself or what mutaion tests can do for you please refer to their [offcial website](https://stryker-mutator.io/).
+This is a sample project that demonstrates how [Stryker .Net](https://github.com/stryker-mutator/stryker-net) can be used to run mutation tests in .Net Core, if you are looking for more information on Stryker itself or what mutation tests can do for you please refer to their [offcial website](https://stryker-mutator.io/).
 
 ## Dependencies 
 
@@ -13,11 +13,11 @@ This is a sample project that demonstrates how [Stryker .Net](https://github.com
 
 ## Local Run
 
-First of all let's install Struker globally.
+First of all let's install Striker globally.
 
 `dotnet tool install -g dotnet-stryker`
 
-After installing and properly cloning this respository, simply go to the tests folder location. 
+After installing and properly cloning this repository, simply go to the tests folder location. 
 
 `cd <repository location>\Stryker.Net.Sample\Stryker.Net.Sample.Tests`
 
@@ -29,11 +29,10 @@ This will run the mutations based on the configurations of the `stryker-config.j
 
 ![Console reporter](https://i.imgur.com/CpCurCL.png "Console reporter")
 
-
 ## Continuous Integartion
 
 - [Sample workflow](https://github.com/raschmitt/stryker-net-sample/blob/master/.github/workflows/mutation-tests.yml)
 
-The sample workflow file shows how to easily integrate mutation tests trough Stryker into a continous integration estrategy and publish results to its dashboard.
+The sample workflow file shows how to easily integrate mutation tests through Stryker into a continuous integration strategy and publish results to its dashboard.
 
-This workflow is automattically run every friday, and the results for its latest run can be found [here](https://dashboard.stryker-mutator.io/reports/github.com/raschmitt/stryker-net-sample/master).
+This workflow is automatically run every friday, and the results for its latest run can be found [here](https://dashboard.stryker-mutator.io/reports/github.com/raschmitt/stryker-net-sample/master).
