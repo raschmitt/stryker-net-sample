@@ -25,7 +25,7 @@ And run the mutation tests:
 
 `dotnet stryker`
 
-After Styker is done it will display your mutation score and the complete html report location. 
+After Stryker is done it will display your mutation score and the complete html report location. 
 
 ![Console reporter](https://i.imgur.com/CpCurCL.png "Console reporter")
 
