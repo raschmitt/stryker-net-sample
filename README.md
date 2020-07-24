@@ -17,7 +17,7 @@ First of all, let's install Striker globally:
 
 `dotnet tool install -g dotnet-stryker`
 
-After installing and properly cloning this repository, simply go to the tests folder location: 
+Then go to the tests folder location: 
 
 `cd <repository location>\Stryker.Net.Sample\Stryker.Net.Sample.Tests`
 
