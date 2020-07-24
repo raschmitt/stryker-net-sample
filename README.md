@@ -13,19 +13,19 @@ This is a sample project that demonstrates how [Stryker .Net](https://github.com
 
 ## Local Run
 
-First of all let's install Striker globally.
+First of all, let's install Striker globally:
 
 `dotnet tool install -g dotnet-stryker`
 
-After installing and properly cloning this repository, simply go to the tests folder location. 
+After installing and properly cloning this repository, simply go to the tests folder location: 
 
 `cd <repository location>\Stryker.Net.Sample\Stryker.Net.Sample.Tests`
 
-And finally run the mutation tests.
+And run the mutation tests:
 
 `dotnet stryker`
 
-This will run the mutations, based on the configurations in the `stryker-config.json` file, presenting to you the mutation score and also the location where to find the complete html report. 
+After styker is done it will display your mutation score and the location where to find the complete html report. 
 
 ![Console reporter](https://i.imgur.com/CpCurCL.png "Console reporter")
 
