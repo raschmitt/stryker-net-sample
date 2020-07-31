@@ -35,4 +35,4 @@ After Stryker is done it will display your mutation score and the complete html 
 
 The sample workflow file shows how to easily integrate mutation tests through Stryker into a continuous integration strategy and publish results to its dashboard.
 
-This workflow is automatically run every friday, and the latest results can be found [here](https://dashboard.stryker-mutator.io/reports/github.com/raschmitt/stryker-net-sample/master).
+This workflow is automatically run every day, and the latest results can be found [here](https://dashboard.stryker-mutator.io/reports/github.com/raschmitt/stryker-net-sample/master).
