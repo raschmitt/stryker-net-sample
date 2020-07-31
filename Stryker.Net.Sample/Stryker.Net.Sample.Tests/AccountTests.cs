@@ -6,37 +6,47 @@ namespace Stryker.Net.Sample.Tests
     public class AccountTest
     {
         [Fact]
-        public void Should_create_new_account_with_overdraft()
+        public void Should_create_new_account()
         {
             //Arrange
             var owner = "Jack"; 
-            var overdraft = true; 
             
             //Act
-            var account = new Account(owner, overdraft);
+            var account = new Account(owner);
             
             //Assert
             account.Balance.Should().Be(default);
+            account.Overdraft.Should().Be(default);
             account.Id.Should().NotBe(default);
             account.Owner.Should().Be(owner);
-            account.Overdraft.Should().Be(overdraft);
         }        
         
         [Fact]
-        public void Should_create_new_account_without_overdraft()
+        public void Should_enable_overdraft()
         {
             //Arrange
-            var owner = "Jack"; 
-            var overdraft = false; 
+            var account = new AccountBuilder().Build();
             
             //Act
-            var account = new Account(owner, overdraft);
+            account.EnableOverdraft();
             
             //Assert
-            account.Balance.Should().Be(default);
-            account.Id.Should().NotBe(default);
-            account.Owner.Should().Be(owner);
-            account.Overdraft.Should().Be(overdraft);
+            account.Overdraft.Should().Be(true);
+        }
+        
+        [Fact]
+        public void Should_disable_overdraft()
+        {
+            //Arrange
+            var account = new AccountBuilder()
+                .WithOverdraft()
+                .Build();
+            
+            //Act
+            account.DisableOverdraft();
+            
+            //Assert
+            account.Overdraft.Should().Be(account.Overdraft);
         }
         
         [Fact]
@@ -81,7 +91,6 @@ namespace Stryker.Net.Sample.Tests
             var amountToWithdrawn = 350;
             
             var account = new AccountBuilder()
-                .WhithoutOverdraft()
                 .WithInitialAmount(initialBalance)
                 .Build();
             

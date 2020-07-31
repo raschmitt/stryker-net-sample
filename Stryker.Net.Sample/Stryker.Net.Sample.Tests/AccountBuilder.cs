@@ -8,10 +8,13 @@
         
         public Account Build()
         {
-            var account = new Account(_owner, _overdraft);
+            var account = new Account(_owner);
 
             if (_amount != default)
                 account.AddMoney(_amount);
+            
+            if (_overdraft != default)
+                account.EnableOverdraft();
             
             return account;
         }
@@ -20,14 +23,8 @@
         {
             _overdraft = true;
             return this;
-        }     
-        
-        public AccountBuilder WhithoutOverdraft()
-        {
-            _overdraft = false;
-            return this;
         }
-        
+
         public AccountBuilder WithInitialAmount(double value)
         {
             _amount = value;
