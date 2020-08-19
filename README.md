@@ -15,15 +15,21 @@ This is a sample project that demonstrates how [Stryker .Net](https://github.com
 
 After cloning this repository the first thing to be done is to install Stryker globally:
 
-`dotnet tool install -g dotnet-stryker`
+```
+dotnet tool install -g dotnet-stryker
+```
 
 Then go to the tests folder location: 
 
-`cd <repository location>\Stryker.Net.Sample\Stryker.Net.Sample.Tests`
+```
+cd <repository location>\Stryker.Net.Sample\Stryker.Net.Sample.Tests
+```
 
 And run the mutation tests:
 
-`dotnet stryker`
+```
+dotnet stryker
+```
 
 After Stryker is done it will display your mutation score and the complete html report location. 
 
