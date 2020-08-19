@@ -16,7 +16,7 @@ jobs:
     runs-on: windows-latest 
     defaults:
       run:
-        working-directory: Stryker.Net.Sample  
+        working-directory: Stryker.Net.Sample     
 
     steps:
     - uses: actions/checkout@v2
@@ -26,11 +26,14 @@ jobs:
       with:
         dotnet-version: 3.1.101
       
-    - name: Install dependencies
-      run: dotnet restore
-      
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build
             
+    - name: Install Coverlet
+      run: dotnet tool install -g coverlet.console
+
     - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      run: coverlet ./Stryker.Net.Sample/bin/Debug/netcoreapp3.1/Stryker.Net.Sample.Tests.dll -t dotnet -a "test --no-build" -f opencover
+
+    - name: Upload report to Codecov
+      uses: codecov/codecov-action@v1.0.13
