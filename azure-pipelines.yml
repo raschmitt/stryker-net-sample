@@ -28,7 +28,7 @@ steps:
         Write-Host "$env:projectKey"
         Write-Host $env:projectKey
         Write-Host "$[variables.projectKey])"
-        Write-Host $[variables.projectKey])
+        # Write-Host $[variables.projectKey]
 
   - task: SonarCloudPrepare@1
     displayName: 'Prepare analysis on SonarCloud'
