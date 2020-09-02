@@ -23,4 +23,5 @@ steps:
     inputs:
       targetType: 'inline'
       script: ' $(Agent.BuildDirectory)/tools/coverlet bin/Debug/netcoreapp3.1/Stryker.Net.Sample.Tests.dll -t dotnet -a "test --no-build" -f opencover'
+      workingDirectory: 'Stryker.Net.Sample/Stryker.Net.Sample.Tests'
 
