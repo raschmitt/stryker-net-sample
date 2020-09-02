@@ -4,9 +4,6 @@ trigger:
 pool:
   vmImage: 'windows-latest'
 
-variables:
-- group: stryker-net-sample
-
 resources:
   repositories:
     - repository: templates
@@ -15,8 +12,4 @@ resources:
       name: pipeline-templates
 
 extends:
-  # template: Build\template.yml@templates
-
-  template: Tests\dotnet-mutation.yml@templates
-  # parameters:
-  #   strykerDashboardApiKey: $STRYKER_DASHBOARD_API_KEY
+  template: Build\dotnet-build.yml@templates
