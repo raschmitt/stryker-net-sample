@@ -4,6 +4,9 @@ trigger:
 pool:
   vmImage: 'windows-latest'
 
+# variables:
+# - name: projectKey
+
 steps:
   - task: PowerShell@2
     displayName: 'Get project key'
@@ -12,8 +15,10 @@ steps:
       script: |
         $projectKey = "$(Build.Repository.Name)" -Replace "/","_"
 
-        echo '##vso[task.setvariable variable=projectKey]$projectKey'
+        echo "$projectKey"
 
+        echo '##vso[task.setvariable variable=projectKey]"$projectKey"'
+        
   - task: PowerShell@2
     inputs:
       targetType: 'inline'
