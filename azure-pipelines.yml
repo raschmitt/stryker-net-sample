@@ -15,9 +15,15 @@ steps:
       projectKey: 'raschmitt_stryker-net-sample'
 
   - task: DotNetCoreCLI@2
+    inputs:
+      command: 'restore'
+      workingDirectory: 'Stryker.Net.Sample'
+
+  - task: DotNetCoreCLI@2
     displayName: 'Build'
     inputs:
       command: 'build'
+      arguments: '--no-restore'
       workingDirectory: 'Stryker.Net.Sample'
       
   # - task: DotNetCoreCLI@2
