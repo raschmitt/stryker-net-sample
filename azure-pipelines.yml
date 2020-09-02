@@ -38,7 +38,7 @@ steps:
     displayName: 'Test'
     inputs:
       testSelector: 'testAssemblies'
-      testAssemblyVer2: '**\*Tests.dll'
+      testAssemblyVer2: '**\*Stryker.Net.Sample.Tests.dll'
       searchFolder: '$(System.DefaultWorkingDirectory)'
       codeCoverageEnabled: true
       
