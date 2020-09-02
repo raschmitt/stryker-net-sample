@@ -12,7 +12,7 @@ steps:
       SonarCloud: 'SonarCloud'
       organization: 'raschmitt'
       scannerMode: 'MSBuild'
-      projectKey: 'raschmitt_$(Build.Repository.Name)'
+      projectKey: "raschmitt_$(Build.Repository.Name)"
 
   - task: DotNetCoreCLI@2
     displayName: 'Build'
