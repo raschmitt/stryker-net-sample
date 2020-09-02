@@ -40,4 +40,7 @@ jobs:
       uses: codecov/codecov-action@v1.0.13
 
     - name: SonarCloud Scan
-      uses: SonarSource/sonarcloud-github-action@v1.4
+      uses: sonarsource/sonarcloud-github-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
