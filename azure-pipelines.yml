@@ -5,23 +5,47 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+
+  - task: SonarCloudPrepare@1
+    displayName: 'Prepare analysis on SonarCloud'
+    inputs:
+      SonarCloud: 'SonarCloud'
+      organization: 'raschmitt'
+      scannerMode: 'MSBuild'
+      projectKey: 'raschmitt_stryker-net-sample'
+
   - task: DotNetCoreCLI@2
     displayName: 'Build'
     inputs:
       command: 'build'
       workingDirectory: 'Stryker.Net.Sample'
       
-  - task: DotNetCoreCLI@2
-    displayName: 'Install coverlet'
-    inputs:
-      command: custom
-      custom: tool
-      arguments: 'install coverlet.console --tool-path $(Agent.BuildDirectory)/tools'
+  # - task: DotNetCoreCLI@2
+  #   displayName: 'Install coverlet'
+  #   inputs:
+  #     command: custom
+  #     custom: tool
+  #     arguments: 'install coverlet.console --tool-path $(Agent.BuildDirectory)/tools'
 
-  - task: PowerShell@2
+  # - task: PowerShell@2
+  #   displayName: 'Test'
+  #   inputs:
+  #     targetType: 'inline'
+  #     script: ' $(Agent.BuildDirectory)/tools/coverlet bin/Debug/netcoreapp3.1/Stryker.Net.Sample.Tests.dll -t dotnet -a "test --no-build" -f opencover'
+  #     workingDirectory: 'Stryker.Net.Sample/Stryker.Net.Sample.Tests'
+
+  - task: VSTest@2
     displayName: 'Test'
     inputs:
-      targetType: 'inline'
-      script: ' $(Agent.BuildDirectory)/tools/coverlet bin/Debug/netcoreapp3.1/Stryker.Net.Sample.Tests.dll -t dotnet -a "test --no-build" -f opencover'
-      workingDirectory: 'Stryker.Net.Sample/Stryker.Net.Sample.Tests'
+      testSelector: 'testAssemblies'
+      testAssemblyVer2: '**\*Tests.dll'
+      searchFolder: '$(System.DefaultWorkingDirectory)'
+      codeCoverageEnabled: true
+      
+  - task: SonarCloudAnalyze@1
+    displayName: 'Run Code Analysis'
 
+  - task: SonarCloudPublish@1
+    displayName: 'Publish Quality Gate Result'
+    inputs:
+      pollingTimeoutSec: '300'
