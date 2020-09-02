@@ -48,3 +48,4 @@ jobs:
         args: >
           -Dsonar.organization=raschmitt
           -Dsonar.projectKey=raschmitt_stryker-net-sample
+          -Dsonar.sonar.cs.opencover.reportsPaths=./Stryker.Net.Sample.Tests/coverage.opencover.xml
