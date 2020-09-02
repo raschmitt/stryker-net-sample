@@ -10,7 +10,6 @@ This is a sample project that demonstrates how [Stryker .Net](https://github.com
 ## Project Dependencies 
 
 - [.Net Core 3.1](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-1/)
-- [FluentAssertions](https://fluentassertions.com/)
 
 ## Local Run
 
