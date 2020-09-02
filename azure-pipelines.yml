@@ -15,14 +15,20 @@ steps:
       script: |
         $projectKey = "$(Build.Repository.Name)" -Replace "/","_"
 
-        echo "$projectKey"
+        Write-Host "$projectKey"
 
-        echo '##vso[task.setvariable variable=projectKey]"$projectKey"'
+        Write-Host "##vso[task.setvariable variable=projectKey]$projectKey"
         
   - task: PowerShell@2
     inputs:
       targetType: 'inline'
-      script: 'echo "$(projectKey)"'
+      script: |
+        Write-Host "$(projectKey)"
+        Write-Host $(projectKey)
+        Write-Host "$env:projectKey"
+        Write-Host $env:projectKey
+        Write-Host "$[variables.projectKey])"
+        Write-Host $[variables.projectKey])
 
   - task: SonarCloudPrepare@1
     displayName: 'Prepare analysis on SonarCloud'
