@@ -20,24 +20,11 @@ steps:
       command: 'build'
       workingDirectory: 'Stryker.Net.Sample'
       
-  # - task: DotNetCoreCLI@2
-  #   displayName: 'Install coverlet'
-  #   inputs:
-  #     command: custom
-  #     custom: tool
-  #     arguments: 'install coverlet.console --tool-path $(Agent.BuildDirectory)/tools'
-
-  # - task: PowerShell@2
-  #   displayName: 'Test'
-  #   inputs:
-  #     targetType: 'inline'
-  #     script: ' $(Agent.BuildDirectory)/tools/coverlet bin/Debug/netcoreapp3.1/Stryker.Net.Sample.Tests.dll -t dotnet -a "test --no-build" -f opencover'
-  #     workingDirectory: 'Stryker.Net.Sample/Stryker.Net.Sample.Tests'
   - task: VSTest@2
     inputs:
       testSelector: 'testAssemblies'
       testAssemblyVer2: |
-        **\*Test*.dll
+        **\*Tests.dll
         !**\obj\**
       searchFolder: '$(System.DefaultWorkingDirectory)'
       codeCoverageEnabled: true
