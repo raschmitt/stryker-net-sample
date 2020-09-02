@@ -9,6 +9,8 @@
 
         public void EnableLeverage()
         {
+            var unusedVariable = "bacon";
+            
             Leverage = true;
         }
         
