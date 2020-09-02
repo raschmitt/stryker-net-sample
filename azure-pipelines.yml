@@ -34,11 +34,16 @@ steps:
   #     script: ' $(Agent.BuildDirectory)/tools/coverlet bin/Debug/netcoreapp3.1/Stryker.Net.Sample.Tests.dll -t dotnet -a "test --no-build" -f opencover'
   #     workingDirectory: 'Stryker.Net.Sample/Stryker.Net.Sample.Tests'
 
+  - task: VisualStudioTestPlatformInstaller@1
+    inputs:
+      packageFeedSelector: 'nugetOrg'
+      versionSelector: 'latestPreRelease'
+
   - task: VSTest@2
     displayName: 'Test'
     inputs:
       testSelector: 'testAssemblies'
-      testAssemblyVer2: '**\*Stryker.Net.Sample.Tests.dll'
+      testAssemblyVer2: '**\*Tests.dll'
       searchFolder: '$(System.DefaultWorkingDirectory)'
       codeCoverageEnabled: true
       
