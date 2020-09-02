@@ -17,6 +17,7 @@ steps:
   - task: DotNetCoreCLI@2
     inputs:
       command: 'restore'
+      feedsToUse: 'select'
       workingDirectory: 'Stryker.Net.Sample'
 
   - task: DotNetCoreCLI@2
@@ -39,12 +40,14 @@ steps:
   #     targetType: 'inline'
   #     script: ' $(Agent.BuildDirectory)/tools/coverlet bin/Debug/netcoreapp3.1/Stryker.Net.Sample.Tests.dll -t dotnet -a "test --no-build" -f opencover'
   #     workingDirectory: 'Stryker.Net.Sample/Stryker.Net.Sample.Tests'
-
-  - task: DotNetCoreCLI@2
+  - task: VSTest@2
     inputs:
-      command: 'test'
-      projects: '**\*Tests.dll'
-      testRunTitle: 'Test'
+      testSelector: 'testAssemblies'
+      testAssemblyVer2: |
+        **\*Test*.dll
+        !**\obj\**
+      searchFolder: '$(System.DefaultWorkingDirectory)'
+      codeCoverageEnabled: true
       
   - task: SonarCloudAnalyze@1
     displayName: 'Run Code Analysis'
