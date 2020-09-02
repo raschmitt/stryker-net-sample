@@ -4,8 +4,8 @@ trigger:
 pool:
   vmImage: 'windows-latest'
 
-variables:
-- name: projectKey
+# variables:
+# - name: projectKey
 
 steps:
   - task: PowerShell@2
