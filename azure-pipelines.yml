@@ -4,46 +4,12 @@ trigger:
 pool:
   vmImage: 'windows-latest'
 
-# variables:
-# - name: projectKey
+resources:
+  repositories:
+    - repository: templates
+      type: git
+      ref: refs/heads/master
+      name: pipeline-templates
 
-steps:
-  - task: PowerShell@2
-    displayName: 'Get project key'
-    inputs:
-      targetType: 'inline'
-      script: |
-        $projectKey = "$(Build.Repository.Name)" -Replace "/","_"
-
-        Write-Host "##vso[task.setvariable variable=projectKey]$projectKey"
-        
-  - task: SonarCloudPrepare@1
-    displayName: 'Prepare analysis on SonarCloud'
-    inputs:
-      SonarCloud: 'SonarCloud'
-      organization: 'raschmitt'
-      scannerMode: 'MSBuild'
-      projectKey: "$(projectKey)"
-
-  - task: DotNetCoreCLI@2
-    displayName: 'Build'
-    inputs:
-      command: 'build'
-      workingDirectory: 'Stryker.Net.Sample'
-      
-  - task: VSTest@2
-    inputs:
-      testSelector: 'testAssemblies'
-      testAssemblyVer2: |
-        **\*Tests.dll
-        !**\obj\**
-      searchFolder: '$(System.DefaultWorkingDirectory)'
-      codeCoverageEnabled: true
-      
-  - task: SonarCloudAnalyze@1
-    displayName: 'Run Code Analysis'
-
-  - task: SonarCloudPublish@1
-    displayName: 'Publish Quality Gate Result'
-    inputs:
-      pollingTimeoutSec: '300'
+extends:
+  template: Build\template.yaml@templates
