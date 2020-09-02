@@ -13,7 +13,7 @@ This is a sample project that demonstrates how [Stryker .Net](https://github.com
 
 ## Local Run
 
-fter cloning this repository the first thing to be done is to install Stryker globally:
+After cloning this repository the first thing to be done is to install Stryker globally:
 
 ```
 dotnet tool install -g dotnet-stryker
