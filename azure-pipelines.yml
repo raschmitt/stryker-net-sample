@@ -12,4 +12,6 @@ resources:
       name: pipeline-templates
 
 extends:
-  template: Build\template.yml@templates
+  # template: Build\template.yml@templates
+
+  template: Tests\dotnet-mutation.yml@templates
