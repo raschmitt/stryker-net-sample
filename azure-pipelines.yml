@@ -11,18 +11,12 @@ steps:
       command: 'build'
       workingDirectory: 'Stryker.Net.Sample'
       
-  # - task: PowerShell@2
-  #   displayName: 'Install coverlet'
-  #   inputs:
-  #     targetType: 'inline'
-  #     script: 'dotnet tool install --tool-path $(Agent.BuildDirectory)/tools'
-      
   - task: DotNetCoreCLI@2
     displayName: 'Install coverlet'
     inputs:
       command: custom
       custom: tool
-      arguments: 'install coverlet --tool-path $(Agent.BuildDirectory)/tools'
+      arguments: 'install coverlet.console --tool-path $(Agent.BuildDirectory)/tools'
 
   - task: PowerShell@2
     displayName: 'Test'
