@@ -12,4 +12,4 @@ resources:
       name: pipeline-templates
 
 extends:
-  template: Build\template.yaml@templates
+  template: Build\template.yml@templates
