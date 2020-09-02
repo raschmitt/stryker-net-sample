@@ -1,5 +1,6 @@
 ﻿namespace Stryker.Net.Sample
 {
+    //ToDo: Cover this class
     public class InvestmentAccount: Account
     {
         public bool Leverage { get; private set; }
