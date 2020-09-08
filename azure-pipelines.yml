@@ -1,0 +1,10 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: run-stryker@0
+  inputs:
+    testProject: '*Tests.csproj'
