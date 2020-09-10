@@ -11,4 +11,3 @@ steps:
 - task: run-stryker@0
   inputs:
     testProject: 'Stryker.Net.Sample.Tests.csproj'
-    parameters: '--reporters "[''html'', ''dashboard'']"'
