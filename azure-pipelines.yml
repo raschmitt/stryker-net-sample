@@ -7,4 +7,4 @@ pool:
 steps:
 - task: run-stryker@0
   inputs:
-    testProject: '*Tests.csproj'
+    testProject: 'Stryker.Net.Sample.Tests.csproj'
