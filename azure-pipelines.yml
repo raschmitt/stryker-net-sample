@@ -11,3 +11,5 @@ steps:
 - task: run-stryker@0
   inputs:
     testProject: 'Stryker.Net.Sample.Tests.csproj'
+    parameters: '--reporters "[''html'', ''dashboard'']" --dashboard-api-key $(STRYKER_DASHBOARD_API_KEY) -project github.com/$(Build.Repository.Name) -version $(Build.SourceBranchName)'
+
