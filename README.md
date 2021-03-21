@@ -1,6 +1,6 @@
 # Striker.Net Sample
 
-[![Azure DevOps builds (job)](https://img.shields.io/azure-devops/build/raschmitt/7618d927-8467-43e2-b5e9-1aeddc1fbfdc/13?label=Build%20%26%20Test&style=flat-square)](https://dev.azure.com/raschmitt/raschmitt/_build?definitionId=13)
+[![Azure DevOps builds (job)](https://img.shields.io/azure-devops/build/raschmitt/7618d927-8467-43e2-b5e9-1aeddc1fbfdc/30?label=Build%20%26%20Test&style=flat-square)](https://dev.azure.com/raschmitt/raschmitt/_build?definitionId=30)
 [![Sonar Coverage](https://img.shields.io/sonar/coverage/raschmitt_stryker-net-sample?label=Code%20Coverage&server=https%3A%2F%2Fsonarcloud.io&style=flat-square)](https://sonarcloud.io/dashboard?id=raschmitt_stryker-net-sample)
 [![Mutation testing badge](https://img.shields.io/endpoint?style=flat-square&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fraschmitt%2Fstryker-net-sample%2Fmaster)](https://dashboard.stryker-mutator.io/reports/github.com/raschmitt/stryker-net-sample/master)
 
@@ -36,7 +36,7 @@ After Stryker is done it will display your mutation score and the complete html 
 
 ## Continuous Integartion
 
-- [Sample workflow](https://github.com/raschmitt/stryker-net-sample/blob/master/.github/workflows/mutation-tests.yml)
+- [Sample pipeline workflow](https://dev.azure.com/raschmitt/raschmitt/_git/pipeline-templates?path=%2Fsteps%2Fmutation_tests%2Fstryker_csharp.yml)
 
 The sample workflow file shows how to easily integrate mutation tests through Stryker into a continuous integration strategy and publish results to its dashboard.
 
